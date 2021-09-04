@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>第三幕</title>
+
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"  />
+
+</head>
+<body>
+ 
+
+<div class="container">
+<div class="cover-1">
+   <img src="img/candle.png" alt="" class="candle">
+    <img src="img/scene3-1.jpg" alt="" class="candle-bg">
+</div>
+<img src="img/hand2.png" alt="" class="hand2">
+<img src="img/closeeye.png" alt="" class="closeeye">
+<div class="vid-container">
+ <video id="video3-1" width="1200"
+    height="674">
+  <source src="scene3-1.mp4" type="video/mp4" />
+</video> 
+<video id="video3-2" width="1200"
+    height="674">
+  <source src="scene3-2.mp4" type="video/mp4" />
+</video> 
+<video id="video3-3" width="1200"
+    height="674">
+  <source src="scene3-3.mp4" type="video/mp4" />
+</video> 
+</div>
+
+
+
+</div>
+<div class="txt">
+<p class="txt3-0">- 吹蠟燭吧！</p>
+ <p class="txt3-1">- 韓吉，你準備好了嗎？</p>
+<p class="txt3-2"><i>我準備好了。</i></p>
+ <p class="txt3-3">- 喂，臭四眼。</p>
+  <p class="txt3-4"><i>你應該懂吧，里維。</i></p>
+  <p class="txt3-5"><i>總算輪到我了的那種感覺。</i></p>
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        
+        setTimeout(function() {
+            $('.txt3-0').addClass('active');
+        }, 1500);
+    });
+    /*準備好了嗎*/
+    setTimeout(function() {
+    $('.txt3-1').fadeIn(500);
+    }, 5000);
+    
+    /*蠟燭閃爍*/
+       setTimeout(function() {
+            $('.cover-1 .candle').addClass('active');
+        }, 7000);
+
+    $('.cover-1 .candle').on('click', function() {
+        $('.txt3-1').fadeOut(1000);
+        $(this).parent('.cover-1').fadeOut(1000);
+        $('.txt3-1').fadeOut();
+        setTimeout(function() {
+            $('.txt3-2').addClass('active');
+        }, 2000);
+
+        setTimeout(function() {
+            $('#video3-1').fadeIn();
+            $('#video3-1').trigger('play');
+        }, 6000);
+        setTimeout(function() {
+            $('.txt3-3').addClass('active');
+        }, 21500);
+        setTimeout(function() {
+            $('.hand2').addClass('active');
+        }, 26000);
+
+    });
+
+    $('.hand2').on('click', function() {
+        $(this).removeClass('active');
+        $('#video3-1').fadeOut();
+        $('#video3-2').fadeIn();
+        setTimeout(function() {
+            $('#video3-2').trigger('play');
+        }, 700);
+        setTimeout(function() {
+            $('.txt3-4,.txt3-5').addClass('active');
+        }, 7000);
+        setTimeout(function() {
+            $('.closeeye').show();
+            $('.closeeye').addClass('active');
+            $('#video3-2').addClass('active');
+        }, 15700);
+
+    });
+
+    $('.closeeye').on('click', function() {
+        $(this).fadeOut();
+        $('#video3-2').fadeOut();
+        $('#video3-3').fadeIn();
+        setTimeout(function() {
+            $('#video3-3').trigger('play');
+        }, 700);
+    })
+</script>
+</html>

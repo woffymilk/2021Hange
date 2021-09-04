@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>第二幕</title>
+
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"  />
+
+</head>
+<body class="scene2">
+ 
+
+<div class="container">
+
+
+<img src="img/cake.png" alt="" class="cake">
+<img src="img/candle.png" alt="" class="candle">
+<img src="img/scene2-1.jpg" alt="" class="scene2-img">
+
+
+
+</div>
+<div class="txt">
+ <p class="txt2">韓吉！生日快樂！</p>
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+   $(document).ready(function () {
+  
+       
+       /*cake float*/
+     setTimeout(function(){ 
+              $('.scene2 .cake').addClass('active');
+            },500);
+       
+       
+      /*游標變火種*/
+        setTimeout(function(){ 
+              $('.scene2').addClass('dark');
+            },6000);
+       
+       $('.cake,.candle').click(function (){
+             $('.scene2').removeClass('dark');
+             $('.scene2-img,.candle,.cake').addClass('lighten');
+           
+              setTimeout(function(){ 
+              $('.txt2').addClass('active');
+            },1000);
+           
+             setTimeout(function(){ 
+           window.location.href = 'scene3.html';},5000); })
+            
+       })
+
+    
+
+    </script>
+
+
+
+</html>
