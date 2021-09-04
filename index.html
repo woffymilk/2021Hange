@@ -100,14 +100,18 @@
           $(this).hide();
           $('.a1.ver2').show();
           $('.a1-txt').addClass('active');
-          $('.b1.ver1').addClass('active');
+        
+           setTimeout(function(){ 
+         $('.b1.ver1').addClass('active');},9000);
+      
       });
       $('.b1.ver1').click(function (){
           $(this).hide();
           $('.b1.ver2').show();
           $('.txt .ver1').hide();
           $('.b1-txt').addClass('active');
-           $('.c1.ver1').addClass('active');
+            setTimeout(function(){ 
+         $('.c1.ver1').addClass('active');},7000);
       });
        $('.c1.ver1').click(function (){
           $('.txt .ver1').hide();
