@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="icon" href="img/ico.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="img/ico.ico" type="image/x-icon" />
+<link rel="bookmark" href="img/ico.ico" type="image/x-icon" />
+<title>Scene 1</title>
+
+<link rel="stylesheet" href="scene.css">
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"  />
+<!-- <link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet" />-->
+</head>
+<body>
+ 
+
+<!--  <script src="https://vjs.zencdn.net/7.14.3/video.min.js"></script>-->
+
+<div class="container">
+<div class="cover">
+ <video  class = 'video-1' width="1200"
+    height="674">
+                  <source src="start.mp4" type="video/mp4" />
+           </video> 
+<!--
+<video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="1200"
+    height="674"
+    data-setup="{}"
+  >
+    <source src="Comp 1.mp4" type="video/mp4" />
+  
+  </video>
+-->
+  </div>
+<img src="img/bg-black-blur.png" alt="" class="bg1">
+<div class="img-container">
+<img src="img/s1-a1.png" alt="" class="a1 ver1">
+<img src="img/s1-a2.png" alt="" class="a1 ver2">
+<img src="img/s1-b1.png" alt="" class="b1 ver1">
+<img src="img/s1-b2.png" alt="" class="b1 ver2">
+<img src="img/s1-c1.png" alt="" class="c1 ver1">
+<img src="img/hand1-c.png" alt="" class="hand1">
+
+</div>
+</div>
+<div class="txt">
+<div class="ori-txt">
+    <p><i>うるさいな、もうちょと寝かせてくれよ…</i></p>
+</div>
+<div class="first-txt">
+<p>- ハンジ、準備はいいか？</p>
+<p><i>準備？何を？ちょっ、メガネかけてないからよく聞こえないんだけど。</i></p>
+<p>- バカ言え！</p>
+</div>
+<div class="a1-txt">
+    <p>- ハンジ分隊長！ちょうどいいところに来ました。</p>
+    <p>- 素晴らしい出来栄えになりましたよ。</p>
+    <p>- サシャのせいで何度も失敗したけど。</p>
+</div>
+<div class="b1-txt">
+   <p>- レシピをいじってみるのも面白いと思ったからです！狩猟生活で培った勘です！</p>
+   <p>- 火をつけたら爆発しただろが！</p>
+</div>
+<div class="c1-txt">
+<p>- ようやく全員がそろった。</p>
+<p>- こっち、ハンジ。</p>
+<p>- オイ、メガネならお前の頭の上にあるじゃねぇかクソメガネ。</p>
+</div>
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+ $(document).ready(function () {
+     
+      
+     $('.cover').click(function (){
+       
+          setTimeout(function(){ 
+              
+                 $('.ori-txt').addClass('active')
+                              },3000);
+         setTimeout(function(){ 
+              $('.cover').fadeOut();
+             $('.first-txt').addClass('active')
+                              },21000);
+     setTimeout(function(){
+          $('.a1.ver1').addClass('active');
+          $('.first-txt').hide();},34000);
+          });
+     
+      $('.a1.ver1').click(function (){
+          $(this).hide();
+          $('.a1.ver2').show();
+          $('.a1-txt').addClass('active');
+        
+           setTimeout(function(){ 
+         $('.b1.ver1').addClass('active');},16000);
+      
+      });
+      $('.b1.ver1').click(function (){
+          $(this).hide();
+          $('.b1.ver2').show();
+          $('.txt .ver1').hide();
+          $('.b1-txt').addClass('active');
+            setTimeout(function(){ 
+         $('.c1.ver1').addClass('active');},11000);
+      });
+       $('.c1.ver1').click(function (){
+          $('.txt .ver1').hide();
+          $('.c1-txt').addClass('active');
+           $('.c1.ver1').addClass('more-active');
+           setTimeout(function(){ $('.hand1').addClass('active')},16000)
+      });
+     
+      $('.hand1').hover(function (){
+          $('.ver2,.more-active').toggleClass('last-blur');
+      });
+     $('.hand1').click(function (){
+          setTimeout(function(){ 
+           window.location.href = 'scene2.html';},500);
+      });
+    });  
+    
+    
+</script>
+<script>
+    $('.cover').on('click', function () {
+        $(this).addClass('active');
+    $(this).children().css({
+      'z-index' : 1,
+      'opacity': 1
+    });
+  $(this).children().trigger('play');
+     
+});
+
+
+    </script>
+</html>

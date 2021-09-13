@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP');
+body {
+
+    margin: 0;
+    padding: 0;
+    color: black;
+    background: black;
+    letter-spacing: 1px;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+p {
+    margin: 0;
+    padding: 0
+}
+
+a {
+    color: black;
+    font-weight: 600
+}
+
+a:hover,
+a:focus {
+    text-decoration: none
+}
+
+.container {
+    width: 1200px;
+    height: 675px;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 30px;
+   box-shadow: inset 0 0 35px rgb(0 0 0 / 80%);
+}
+.cover {
+    background-image: url(img/cover.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-bottom: 57%;
+    position: absolute;
+    z-index: 99;
+    cursor: pointer
+}
+.cover.active{
+    cursor: auto
+}
+
+.video-1 {
+    opacity: 0;
+    width: 100%;
+    transition: 1s;
+    position: absolute;
+    z-index: -1;
+}
+
+.bg1 {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    opacity: 0.8;
+    z-index: -2
+}
+
+.txt {
+    padding: 15px;
+    height: 30px;
+    background: black;
+    position: relative;
+    z-index: 99;
+    bottom: 0;
+    text-align: center;
+}
+
+.txt p {
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.txt i{
+    font-weight: 200;
+    font-size: 22px;
+    color: white;
+    font-family:'Noto Serif JP', serif;
+    font-style:normal
+}
+.img-container img {
+    position: absolute;
+    opacity: 0;
+    filter: blur(5px)brightness(0.8);
+    transition: all .3s ease
+}
+
+.img-container img:hover {
+    filter: blur(2.5px)brightness(1);
+    cursor: pointer
+}
+
+.img-container .a1 {
+    opacity: 0;
+    right: 3%;
+    pointer-events: none;
+    margin-top: 19%;
+    z-index: 1;
+    transition: all .5s ease
+}
+
+.img-container .ver2 {
+    display: none;
+    opacity: 1;
+    filter: blur(2.5px);
+}
+.img-container .a1.ver1.active{
+    opacity: 1;
+    pointer-events: all
+}
+.a1-txt p,.b1-txt p,.c1-txt p {
+    opacity: 0;
+    font-weight: 400
+}
+.txt p:nth-child(2n){
+    color:grey
+}
+.ori-txt p{
+    opacity: 0
+}
+.first-txt p{
+    opacity: 0
+}
+.ori-txt.active p,.first-txt.active p,.a1-txt.active p,.b1-txt.active p,.c1-txt.active p {
+    animation-name: txt-show;
+    animation-duration: 5s;
+    animation-timing-function: ease
+}
+
+@keyframes txt-show {
+    15% {
+        opacity: 1
+    }
+
+    85% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+.first-txt p:nth-child(2),.a1-txt p:nth-child(2),.b1-txt p:nth-child(2),.c1-txt p:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.first-txt p:nth-child(3),.a1-txt p:nth-child(3),.b1-txt p:nth-child(3),.c1-txt p:nth-child(3) {
+    animation-delay: 10s;
+}
+
+.b1 {
+    left: 3%;
+    margin-top: 17%;
+    z-index: 1;
+    pointer-events: none;
+    display: none;
+    opacity: 0;
+    transition: all .5s ease
+}
+
+.b1.active {
+    pointer-events: all;
+    display: block;
+    opacity: 1;
+   
+}
+
+
+.b1.ver2 {
+    animation-name: headShake;
+    animation-duration: 1s;
+    animation-timing-function: ease
+}
+.c1 {
+    left: 34%;
+    margin-top: 9%;
+    z-index: 0;
+     display: none;
+    pointer-events: none;
+    opacity: 0;
+     transition: all .5s ease
+}
+.c1.active {
+     pointer-events: all;
+    display: block;
+    opacity: 1;
+}
+.c1.more-active{
+    filter: blur(2.5px);
+    pointer-events: none
+}
+.img-container .hand1{
+    z-index: -1;
+    right: 0;
+    bottom: 60px;
+    display: block;
+    pointer-events: none;
+    transition: all .5s ease
+}
+.img-container .hand1.active {
+    z-index: 10;
+     filter: blur(3px);
+    opacity: 1;    
+    pointer-events: all;
+}
+
+
+.img-container .hand1.active:hover{
+    filter: blur(0);
+}
+.last-blur{
+    filter: blur(5px) !important;
+}
+/*第二幕*/
+.txt .txt2 {    
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 3px;
+opacity: 0}
+.scene2-img{
+    opacity: 0;
+      transition: all 3s ease
+}
+.scene2-img.active{
+    opacity: 0.5;
+}
+
+.txt2.active{   
+    opacity: 1;
+    transition: all 1s ease    
+}
+
+.scene2.dark{
+    cursor: url("img/candle-cursor.png"),auto;
+}
+.scene2-img.lighten{
+    opacity: 1
+}
+.scene2 .cake{   
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    top: 57%;
+    left: 47.8%;
+    transition: all .3s ease;
+}
+.scene2 .cake.active{
+    opacity: 1;
+      animation:float 2.5s infinite;
+    animation-timing-function: ease-in-out;
+     filter: drop-shadow(0px 0px 10px black)
+}
+@keyframes float{
+    0%{
+       transform: scale(1);
+    }
+    50%{
+     transform: scale(1.08);
+    }
+     100%{
+     transform: scale(1);
+    }
+}
+.scene2 .cake.lighten{
+   animation: none
+}
+.scene2 .candle{
+    width: 205px;
+    position: absolute;
+   top: 45.5%;
+    left: 45%;
+    z-index:5;
+    opacity: 0;
+    transition: all .3s ease;
+    filter: drop-shadow(0px 0px 20px rgb(255 235 59 / 65%))
+}
+.scene2 .candle:hover{
+    opacity: 0.5;
+     animation-name: candle2;
+     animation-duration: 2s;
+    animation-iteration-count: infinite;
+     cursor: url("img/candle-cursor.png"),auto;
+}
+@keyframes candle2{
+    0%{
+         opacity: 0.5
+    }
+    50%{
+       opacity: 1
+    }
+}
+.scene2 .candle.lighten{
+    opacity: 1
+}
+/*第三幕*/
+
+.cover-1{
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    background: black
+}
+.cover-1 .candle-bg{
+    width: 100%;
+    opacity:1
+}
+.cover-1 .candle{
+    width: 205px;
+    position: absolute;
+    top: 46%;
+    left: 45%;
+    z-index: 2;
+    opacity: 1;
+    display: none;
+    transition: all 3s ease;
+}
+.cover-1 .candle.active{
+    opacity: 0.4;
+    display: block;
+    cursor: pointer;
+     animation: candle 2s  infinite;    
+    filter: drop-shadow(0px 0px 20px rgb(255 235 59))
+}
+@keyframes candle{
+    0%{
+        opacity: 0.4
+    }
+    50%{
+        opacity: 1
+    }
+}
+.cover-1 .candle.active:hover{
+    opacity: 1;
+    animation: none
+}
+.txt3-1{
+    display: none
+}
+.txt3-0,.txt3-2, .txt3-3,.txt3-4,.txt3-5{
+    opacity: 0;
+    }
+  .txt3-0.active, .txt3-1.active,.txt3-2.active, .txt3-3.active,.txt3-4.active,.txt3-5.active{
+    animation-name:txt-show;
+     animation-duration: 3s;
+      animation-timing-function: ease
+}
+.txt3-5.active{
+    animation-delay: 3s
+}
+.vid-container{
+    position: relative;
+    z-index: 1
+}
+.vid-container video{
+    position: absolute;
+    width: 100%;
+     z-index: 1;
+    display: none
+}
+.hand2{
+    position: absolute;
+    right: 3px;
+   bottom: 0;
+    cursor: pointer;
+    z-index: 5;
+    transition: all .5s ease;
+    opacity: 0;
+    pointer-events: none
+}
+.hand2.active{
+    opacity: 1;
+    pointer-events: all
+}
+.hand2.active:hover{
+filter: drop-shadow(2px 4px 13px black) 
+}
+.closeeye{
+      position: absolute;
+    left: 24.7%;
+    bottom: 0;
+    cursor: pointer;
+    z-index: 5;
+    transition: all .3s ease;
+    opacity: 0;
+    display: none;
+    pointer-events: none
+}
+.closeeye.active{
+    opacity: 1;
+     pointer-events: all
+}
+#video3-2{
+    transition: all .5s ease
+}
+#video3-2.active{
+    filter: brightness(0.7)
+}
+.closeeye.active:hover{
+     filter: drop-shadow(0px -5px 10px black)   
+}
+#video3-3{
+    transition: all .5s ease
+}
